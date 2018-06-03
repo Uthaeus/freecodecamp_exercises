@@ -9,17 +9,33 @@
 // Do NOT return an array.
 // Do NOT include quotes (single or double) in the output.
 
+// Count Change  Cards
+// +1  2, 3, 4, 5, 6
+// 0 7, 8, 9
+// -1  10, 'J', 'Q', 'K', 'A'
+
 
 var count = 0;
 
 function cc(card) {
   // Only change code below this line
+  var pluses = [2, 3, 4, 5, 6];
+  var zeros = [7, 8, 9];
+  var negs = [10, 'J', 'Q', 'K', 'A'];
+  if (pluses.includes(card)) {
+    count++;
+  } else if (negs.includes(card)) {
+    count--;
+  }
   
-  
-  return "Change Me";
+  return count > 0 ? `${count} Bet` : `${count} Hold`;
   // Only change code above this line
 }
 
 // Add/remove calls to test your function.
 // Note: Only the last will display
-cc(2); cc(3); cc(7); cc('K'); cc('A');
+console.log(cc(2)); 
+console.log(cc(3)); 
+console.log(cc(7)); 
+console.log(cc('K')); 
+console.log(cc('A'));
