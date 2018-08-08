@@ -116,11 +116,56 @@
 // console.log(lookUpProfile("Bob", "number"));
 
 
-function convertToInteger(str) {
-  return parseInt(str, 2);
+// function convertToInteger(str) {
+//   return parseInt(str, 2);
+// }
+
+// console.log(convertToInteger("10011"));
+
+
+// the global variable
+var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+
+/* This function should add a book to the list and return the list */
+// New parameters should come before the bookName one
+
+// Add your code below this line
+function add (books, bookName) {
+  let myList = [];
+  for (var i = 0; i < books.length; i++) {
+    myList.push(books[i]);
+  }
+  if (!myList.includes(bookName)) {
+    myList.push(bookName);
+  } 
+
+  return myList;
+  
+  // Add your code above this line
 }
 
-console.log(convertToInteger("10011"));
+/* This function should remove a book from the list and return the list */
+// New parameters should come before the bookName one
+
+// Add your code below this line
+function remove (books, bookName) {
+  let myList = [];
+  for (let book in books) {
+    myList.push(books[book]);
+  }
+  return myList.filter(e => e !== bookName);
+    // Add your code above this line
+  
+}
+
+var newBookList = add(bookList, 'A Brief History of Time');
+var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
+var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
+
+console.log(bookList);
+console.log('*****');
+console.log(newBookList);
+console.log(newerBookList);
 
 
 
