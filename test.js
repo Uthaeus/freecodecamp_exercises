@@ -330,15 +330,31 @@
 
 // console.log(new_s);
 
-function splitify(str) {
-  // Add your code below this line
-  return str.split(/[\s,-]/)
+// function splitify(str) {
+//   // Add your code below this line
+//   return str.split(/[\s,-]/)
   
-  // Add your code above this line
+//   // Add your code above this line
+// }
+// console.log(splitify("Hello World,I-am code"));
+
+
+
+var globalTitle = "Winter Is Coming";
+
+// Add your code below this line
+function urlSlug(title) {
+  let arr = [];
+  for (let word in title) {
+    arr.push(title[word].toLowerCase());
+  }
+  return arr.join('-');
 }
-console.log(splitify("Hello World,I-am code"));
+// Add your code above this line
 
+var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
 
+console.log(winterComing);
 
 
 
