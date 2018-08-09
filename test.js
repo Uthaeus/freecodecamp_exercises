@@ -284,13 +284,13 @@ var watchList = [
 
 // Add your code below this line
 
-var filteredList = watchList.map(a => {
-  var obj = {};
-  obj['title'] = a['Title'];
-  obj['rating'] = a['imdbRating'];
-  return obj;
-});
-filteredList = filteredList.filter(a => +a['rating'] >= 8.0);
+// var filteredList = watchList.map(a => {
+//   var obj = {};
+//   obj['title'] = a['Title'];
+//   obj['rating'] = a['imdbRating'];
+//   return obj;
+// });
+// filteredList = filteredList.filter(a => +a['rating'] >= 8.0);
 
 // var rating = watchList.map(a => {
 //   var obj = {};
@@ -299,10 +299,14 @@ filteredList = filteredList.filter(a => +a['rating'] >= 8.0);
 //   return obj;
 // });
 
+var averageRating = watchList.map(a => +a['imdbRating']).reduce((a, b) => a += b) / watchList.length;
+//averageRating = averageRating;
+
 // Add your code above this line
 
 // console.log(rating);
-console.log(filteredList);
+// console.log(filteredList);
+console.log(averageRating);
 
 
 // the global Array
