@@ -10,7 +10,7 @@ function sumFibs(num) {
 
   for (var i = 2; i < num; i++) {
     let temp = result[i - 2] + result[i - 1]
-    if (temp >= num) {
+    if (temp > num) {
       break;
     }
     result.push(temp);
