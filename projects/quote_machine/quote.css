@@ -1,0 +1,103 @@
+body {
+  height: 100%;
+  background: url('http://www.nabweb.info/wp-content/uploads/2018/02/free-parchment-paper-background-15-parchment-textures-freecreatives.jpg');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Chicle', cursive;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  width: 600px;
+  height: 250px;
+  box-shadow: 5px 5px 5px #424241;
+  background: url('https://img3.stockfresh.com/files/l/loraliu/m/23/1047985_stock-photo-grunge-cover-for-album-or-portfolio-on-the-newspaper-background.jpg');
+  border-radius: 3px;
+  border: 10px solid #605a51;
+}
+
+.quote-btn {
+  height: 30px;
+  width: 120px;
+  background-color: #143872;
+  border: 1px solid black;
+  border-radius: 3px;
+  color: white;
+  margin: 10px 20px 10px 10px;
+  box-shadow: 3px 3px 3px #424241;
+}
+
+.quote-btn:hover {
+  background-color: #2b508c;
+  cursor: pointer;
+}
+
+.share-btn {
+  text-decoration: none;
+  background-color: #143872;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-size: .9em;
+  color: white;
+  margin: 10px 10px -10px 30px;
+  box-shadow: 3px 3px 3px #424241;
+  padding: 5px 15px 5px 5px;
+}
+
+.share-btn:hover {
+  background-color: #2b508c;
+  
+}
+
+#author {
+  float: right;
+  margin-right: 5%;
+  font-family: 'Pacifico', cursive;
+  font-size: .8em;
+}
+
+#text {
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 1.4em;
+  padding-right: 10px;
+}
+
+.quote-cont {
+  position: absolute;
+  align-self: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  margin-top: -5%;
+}
+
+.buttons {
+  postion: absolute;
+  display: inline-block;
+  align-self: flex-end;
+  width: 100%;
+}
+
+.share {
+  position: relative;
+  float: left;
+}
+
+.cycle {
+  position: relative;
+  float: right;
+}
+
+
+
+
+
