@@ -3,35 +3,75 @@
   <head>
     <title>JS Calculator</title>
     <link rel="stylesheet" href="calculator.css" />
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="calculator.js"></script>
   </head>
   <body>
-    <div id="calc-body">
-      <div id="output">0</div>
+    <div id="calc-body" class="container">
+      <div class="row">
+        <div id="output" class="col-sm-12">
+          0
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <p>AC</p>
+          <p>7</p>
+          <p>4</p>
+          <p>1</p>
+          <p>0</p>
+        </div>
+
+        <div class="col">
+          <p>Casdfasdf</p>
+          <p>8</p>
+          <p>5</p>
+          <p>2</p>
+          <p>&#32;</p>
+        </div>
+        <div class="col">
+          <p>&#37;</p>
+          <p>9</p>
+          <p>6</p>
+          <p>3</p>
+          <p>.</p>
+        </div>
+        <div class="col four">
+          <p>/</p>
+          <p>x</p>
+          <p>-</p>
+          <p>+</p>
+          <p>=</p>
+        </div>
+      </div>
+    </div>
+    <!-- <div id="calc-body" class="container">
+      <div class="row">
+        <div id="output" class="col-sm-12">0</div>
+      </div>
 
       <div id="buttons" class="row">
-        <div class="column">
+        <div class="col-sm">
           <button id="AC">AC</button>
           <button id="seven">7</button>
           <button id='four'>4</button>
           <button id='one'>1</button>
           <button id="zero">0</button>
         </div>
-        <div class="column">
+        <div class="col-sm">
           <button></button>
           <button id="eight">8</button>
           <button id="five">5</button>
           <button id="two">2</button>
         </div>
-        <div class="column">
+        <div class="col-sm">
           <button id="percent">%</button>
           <button id="nine">9</button>
           <button id="six">6</button>
           <button id="three">3</button>
           <button id="decimal">.</button>
         </div>
-        <div class="column">
+        <div class="col-sm">
           <button id="divide">/</button>
           <button id="multiply">*</button>
           <button id="subtract">-</button>
@@ -39,6 +79,6 @@
           <button id="equals">=</button>
         </div>
       </div>
-    </div>
+    </div> -->
   </body>
 </html>
