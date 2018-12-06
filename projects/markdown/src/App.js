@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   render() {
-    let markdown = this.state;
+    let {markdown} = this.state;
 
     return (
       <div className="App container">
@@ -31,8 +31,8 @@ class App extends Component {
         </div>
         <div>
           <h1>Markdown Output</h1>
-          <div>
-
+          <div dangerouslySetInnerHTML={{__html: marked(markdown)}}>
+            
           </div>
         </div>
       </div>
