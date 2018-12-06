@@ -1,6 +1,7 @@
 let isSession = true;
 let interval = setInterval(clock, 1000);
 let isPaused = true;
+let count = 0;
 
 breakIncrement = () => {
     let m = document.getElementById('break-length');
@@ -53,15 +54,33 @@ reset = () => {
 }
 
 startStop = () => {
-    
+    if (isPaused) {
+        interval = setInterval(clock, 1000);
+        isPaused = false;
+    } else {
+        clearInterval(interval);
+        isPaused = true;
+    }
 }
 
 clock = () => {
+    count++;
     let currentTime = document.getElementById('time-left').innerHTML.split(':');
-    let min = currentTime[0];
-    let sec = currentTime[1];
-
-
+    let min = +currentTime[0];
+    let sec = +currentTime[1];
+    let total = min * 60 + sec;
+    let out = true;
+    if (count == total) {
+        out = false;
+        formatClock(0, 0);
+        intermission();
+    }
+    if (out) {
+        let preOut = total - count;
+        let min = Math.floor(preOut / 60);
+        let sec = preOut % 60;
+        formatClock(min, sec);
+    }
 }
 
 formatClock = (min, sec) => {
@@ -72,4 +91,8 @@ formatClock = (min, sec) => {
         sec = '0' + sec.toString();
     }
     document.getElementById('time-left').innerHTML = min + ':' +sec;
+}
+
+intermission = () => {
+    
 }
