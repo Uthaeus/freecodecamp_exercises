@@ -1,9 +1,9 @@
 let isSession = true;
-let interval = setInterval(clock, 1000);
+let interval;
 let isPaused = true;
 let count = 0;
 
-breakIncrement = () => {
+const breakIncrement = () => {
     let m = document.getElementById('break-length');
     let val = +m.innerHTML;
     if (val < 60) {
@@ -11,7 +11,7 @@ breakIncrement = () => {
     }
 }
 
-breakDecrement = () => {
+const breakDecrement = () => {
     let m = document.getElementById('break-length');
     let val = +m.innerHTML;
     if (val > 1) {
@@ -19,7 +19,7 @@ breakDecrement = () => {
     }
 }
 
-sessionIncrement = () => {
+const sessionIncrement = () => {
     let m = document.getElementById('session-length');
     let val = +m.innerHTML + 1
     if (val <= 60) {
@@ -30,7 +30,7 @@ sessionIncrement = () => {
     }
 }
 
-sessionDecrement = () => {
+const sessionDecrement = () => {
     let m = document.getElementById('session-length');
     let val = +m.innerHTML - 1;
     if (val > 1) {
@@ -41,7 +41,7 @@ sessionDecrement = () => {
     }
 }
 
-adjustTime = (num) => {
+const adjustTime = (num) => {
     if (num < 10) {
         num = '0' + num.toString();
     }
@@ -49,21 +49,25 @@ adjustTime = (num) => {
     document.getElementById('time-left').innerHTML = newTime;
 }
 
-reset = () => {
+const reset = () => {
     location.reload();
 }
 
-startStop = () => {
+const startStop = () => {
+    let startButton = document.getElementById('start_stop');
+
     if (isPaused) {
         interval = setInterval(clock, 1000);
+        startButton.innerHTML = 'Pause';
         isPaused = false;
     } else {
         clearInterval(interval);
+        startButton.innerHTML = 'Start';
         isPaused = true;
     }
 }
 
-clock = () => {
+const clock = () => {
     count++;
     let currentTime = document.getElementById('time-left').innerHTML.split(':');
     let min = +currentTime[0];
@@ -83,7 +87,7 @@ clock = () => {
     }
 }
 
-formatClock = (min, sec) => {
+const formatClock = (min, sec) => {
     if (min < 10) {
         min = '0' + min.toString();
     }
@@ -93,6 +97,12 @@ formatClock = (min, sec) => {
     document.getElementById('time-left').innerHTML = min + ':' +sec;
 }
 
-intermission = () => {
+const intermission = () => {
+    clearInterval(interval)
+    document.getElementById('beep').play();
     
+    isSession = false;
+    let breakTime = +document.getElementById('break-length').innerHTML;
+    adjustTime(breakTime);
+    interval = setInterval(clock, 1000);
 }
