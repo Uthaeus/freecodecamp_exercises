@@ -1,4 +1,6 @@
 let isSession = true;
+let interval = setInterval(clock, 1000);
+let isPaused = true;
 
 breakIncrement = () => {
     let m = document.getElementById('break-length');
@@ -50,3 +52,24 @@ reset = () => {
     location.reload();
 }
 
+startStop = () => {
+    
+}
+
+clock = () => {
+    let currentTime = document.getElementById('time-left').innerHTML.split(':');
+    let min = currentTime[0];
+    let sec = currentTime[1];
+
+
+}
+
+formatClock = (min, sec) => {
+    if (min < 10) {
+        min = '0' + min.toString();
+    }
+    if (sec < 10) {
+        sec = '0' + sec.toString();
+    }
+    document.getElementById('time-left').innerHTML = min + ':' +sec;
+}
