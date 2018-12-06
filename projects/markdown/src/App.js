@@ -26,12 +26,12 @@ class App extends Component {
         <div>
           <FormGroup controlId="formControlsTextarea">
             <ControlLabel>Markdown Input</ControlLabel>
-            <FormControl componentClass="textarea" placeholder="Enter Markdown" value={markdown} onChange={(event) => this.updateMarkdown(event.target.value)}></FormControl>
+            <FormControl id="editor" componentClass="textarea" placeholder="Enter Markdown" value={markdown} onChange={(event) => this.updateMarkdown(event.target.value)}></FormControl>
           </FormGroup>
         </div>
         <div>
           <h1>Markdown Output</h1>
-          <div dangerouslySetInnerHTML={{__html: marked(markdown)}}>
+          <div id="preview" dangerouslySetInnerHTML={{__html: marked(markdown)}}>
             
           </div>
         </div>
