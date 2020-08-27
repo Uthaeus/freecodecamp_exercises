@@ -14,10 +14,9 @@ function sym(...args) {
           let marker = false;
           console.log(marker);
         }
-      }
-      console.log(marker);
-      if (marker == true) {
-        possibles.push(args[x][y]);
+        if (marker) {
+          possibles.push(args[x][y]);
+        }
       }
     }
   }
