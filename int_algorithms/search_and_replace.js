@@ -7,7 +7,6 @@
 
 
 function myReplace(str, before, after) {
-  let ind = str.search(before);
 
   if (before.charCodeAt(0) < 97) {
     after = after.substr(0, 1).toUpperCase() + after.substr(1);
