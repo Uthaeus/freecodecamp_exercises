@@ -1,6 +1,22 @@
 let mainTimer = true;
 let playing = false;
 
+const start = () => {
+    playing = !playing;
+
+    if (playing) {
+        setInterval(countDown, 1000);
+    } else {
+        setInterval(countDown, 0);
+    }
+}
+
+const countDown = () => {
+    let currentValue = document.getElementById('main-display').innerHTML;
+    let min = currentValue.split(':')[0];
+    let sec = currentValue.split(':')[1];
+}
+
 const reSet = () => {
     playing = false;
     mainTimer = true;
@@ -19,7 +35,6 @@ const mainBreak = () => {
         currentValue = document.getElementById('break-display').innerHTML;
         display.innerHTML = currentValue + ':00';
     }
-    console.log(mainTimer);
 }
 
 const breakIncrement = () => {
