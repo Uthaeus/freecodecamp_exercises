@@ -1,4 +1,13 @@
 let mainTimer = true;
+let playing = false;
+
+const reSet = () => {
+    playing = false;
+    mainTimer = true;
+    document.getElementById('break-display').innerHTML = 5;
+    document.getElementById('time-display').innerHTML = 25;
+    document.getElementById('main-display').innerHTML = '25:00'
+}
 
 const mainBreak = () => {
     mainTimer = !mainTimer;
