@@ -7,7 +7,20 @@
     <script src='clock.js'></script>
   </head>
   <body>
+    <div id='title'>Pomodoro Clock</div>
 
+    <div id='clock'>
+      <div id='break'>
+        <button id='break-increment' onclick='breakIncrement()'>+</button>
+        <div id='break-display'></div>
+        <button id='break-decrement' onclick='breakDecrement()'>-</button>
+      </div>
+
+      <div id='main'>
+        <div id='main-label'>Time Remaining</div>
+        <div id='main-display'>25:00</div>
+      </div>
+    </div>
   </body>
 
 </html>
