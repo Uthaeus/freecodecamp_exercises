@@ -1,4 +1,17 @@
+let mainTimer = true;
 
+const mainBreak = () => {
+    mainTimer = !mainTimer;
+    let display = document.getElementById('main-display');
+    if (mainTimer) {
+        currentValue = document.getElementById('time-display').innerHTML;
+        display.innerHTML = currentValue + ':00';
+    } else {
+        currentValue = document.getElementById('break-display').innerHTML;
+        display.innerHTML = currentValue + ':00';
+    }
+    console.log(mainTimer);
+}
 
 const breakIncrement = () => {
     let currentValue = +document.getElementById('break-display').innerHTML
