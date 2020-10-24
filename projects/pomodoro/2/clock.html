@@ -12,13 +12,23 @@
     <div id='clock'>
       <div id='break'>
         <button id='break-increment' onclick='breakIncrement()'>+</button>
-        <div id='break-display'></div>
+        <div id='break-display'>5</div>
         <button id='break-decrement' onclick='breakDecrement()'>-</button>
       </div>
 
       <div id='main'>
         <div id='main-label'>Time Remaining</div>
         <div id='main-display'>25:00</div>
+        <div id='main-buttons'>
+          <button id='start' onclick='start()'>Start</button>
+          <button id='reset' onclick='reSet()'>Reset</button>
+        </div>
+      </div>
+
+      <div id='time'>
+        <button id='time-increment' onclick='timeIncrement()'>+</button>
+        <div id='time-display'>25</div>
+        <button id='time-decrement' onclick='timeDecrement()'>-</button>
       </div>
     </div>
   </body>
