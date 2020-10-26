@@ -12,9 +12,9 @@ const stopTimer = () => {
 }
 
 const timeUpAlarm = () => {
-    document.getElementById('main-display').innerHTML = '00:00';
+    console.log('time up alarm');
     stopTimer();
-    ding.play();
+    //ding.play();
     
 }
 
@@ -22,9 +22,9 @@ const countDown = () => {
     let currentValue = document.getElementById('main-display').innerHTML;
     let min = +currentValue.split(':')[0];
     let sec = +currentValue.split(':')[1];
-
+    console.log(min);
     if (sec - 1 == 0 && min == 0) {
-        document.getElementById('main-display').innerHTML = '00:00';
+        sec = sec - 1
         timeUpAlarm();
     } else if (sec - 1 < 0) {
         min--;
