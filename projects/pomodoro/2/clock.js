@@ -1,25 +1,26 @@
 let mainTimer = true;
 let playing = false;
+let myVar;
 
 const startTimer = () => {
-    playing = !playing;
+    myVar = setInterval(countDown, 1000);
 }
 
-const timer = () => {
-    let myVar;
+const stopTimer = () => {
+    clearInterval(myVar);
+}
 
-    if (!playing) {
-        clearInterval(myVar);
-    } else if (playing) {
-        myVar = setInterval(countDown, 1000);
-    }
+const timeUpAlarm = () => {
+    stopTimer();
+    setInterval(function() {
+        console.log('this is a test');
+    }, 1000);
 }
 
 const countDown = () => {
     let currentValue = document.getElementById('main-display').innerHTML;
     let min = +currentValue.split(':')[0];
     let sec = +currentValue.split(':')[1];
-    console.log(min, sec)
 
     if (sec - 1 == 0 && min == 0) {
         document.getElementById('main-display').innerHTML = '00:00';
@@ -36,7 +37,7 @@ const countDown = () => {
 }
 
 const reSet = () => {
-    playing = false;
+    stopTimer();
     mainTimer = true;
     document.getElementById('break-display').innerHTML = 5;
     document.getElementById('time-display').innerHTML = 25;
