@@ -13,8 +13,17 @@ const start = () => {
 
 const countDown = () => {
     let currentValue = document.getElementById('main-display').innerHTML;
-    let min = currentValue.split(':')[0];
-    let sec = currentValue.split(':')[1];
+    let min = +currentValue.split(':')[0];
+    let sec = +currentValue.split(':')[1];
+
+    if (sec - 1 == 0 && min == 0) {
+        timeUpAlarm();
+    } else if (sec - 1 < 0) {
+        min--;
+        sec = 59;
+    } else {
+        sec--
+    }
 }
 
 const reSet = () => {
