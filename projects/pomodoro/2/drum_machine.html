@@ -10,16 +10,16 @@
         <div id='title'>Drum Machine</div>
         <div id='drum-machine'>
             <div id='display'></div>
-            <input id='out' type='text' oninput="myfunc(this.value)" />
-            <div id='drumQ' class='drum-pad'>Q</div>
-            <div id='drumW' class='drum-pad'>W</div>
-            <div id='drumE' class='drum-pad'>E</div>
-            <div id='drumA' class='drum-pad'>A</div>
-            <div id='drumS' class='drum-pad'>S</div>
-            <div id='drumD' class='drum-pad'>D</div>
-            <div id='drumZ' class='drum-pad'>Z</div>
-            <div id='drumX' class='drum-pad'>X</div>
-            <div id='drumC' class='drum-pad'>C</div>
+            <!-- <input id='out' type='text' autofocus='autofocus' onfocus="this.select()" oninput="myfunc(this.value)" /> -->
+            <div id='drumQ' class='drum-pad' onclick='drumClick(this.id)'>Q</div>
+            <div id='drumW' class='drum-pad' onclick='drumClick(this.id)'>W</div>
+            <div id='drumE' class='drum-pad' onclick='drumClick(this.id)'>E</div>
+            <div id='drumA' class='drum-pad' onclick='drumClick(this.id)'>A</div>
+            <div id='drumS' class='drum-pad' onclick='drumClick(this.id)'>S</div>
+            <div id='drumD' class='drum-pad' onclick='drumClick(this.id)'>D</div>
+            <div id='drumZ' class='drum-pad' onclick='drumClick(this.id)'>Z</div>
+            <div id='drumX' class='drum-pad' onclick='drumClick(this.id)'>X</div>
+            <div id='drumC' class='drum-pad' onclick='drumClick(this.id)'>C</div>
         </div>
     </body>
 </html>
