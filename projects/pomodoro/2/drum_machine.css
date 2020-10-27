@@ -5,3 +5,8 @@
     width: 30px;
     text-align: center;
 }
+
+#drum-machine {
+    display: flex;
+    align-items: flex-end;
+}
