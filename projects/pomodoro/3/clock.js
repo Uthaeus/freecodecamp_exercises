@@ -15,7 +15,8 @@ const startStop = () => {
 }
 
 const intermission = () => {
-    ding.play()
+    // ding.play()
+    document.getElementById('beep').play();
     isSession = !isSession;
     let min;
     if (isSession) {
@@ -28,6 +29,7 @@ const intermission = () => {
     if (+min < 10) min = '0' + min.toString();
 
     document.getElementById('time-left').innerHTML = min.toString() + ':00';
+    myVar = setInterval(countdown, 1000);
 
 }
 
@@ -47,7 +49,10 @@ const countdown = () => {
     min = min < 10 ? '0' + min.toString() : min;
     sec = sec < 10 ? '0' + sec.toString() : sec;
     document.getElementById('time-left').innerHTML = `${min}:${sec}`;
-    if (+min == 0 && +sec == 0) intermission();
+    if (+min == 0 && +sec == 0) {
+        clearInterval(myVar);
+        intermission();
+    }
 }
 
 const breakIncrement = () => {
@@ -90,8 +95,7 @@ const sessionDecrement = () => {
 
 const reSet = () => {
     clearInterval(myVar);
-    ding.pause();
-    ding.load();
+    document.getElementById('beep').load();
     document.getElementById('start_stop').innerHTML = 'play';
     document.getElementById('break-length').innerHTML = 5;
     document.getElementById('session-length').innerHTML = 25;
