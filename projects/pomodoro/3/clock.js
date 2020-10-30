@@ -1,4 +1,4 @@
-
+let isSession = true;
 let isRunning = false;
 let myVar;
 
@@ -13,21 +13,38 @@ const startStop = () => {
     }
 }
 
-const countdown = () => {
-    let currentVal = document.getElementById('time-left').innerHTML;
-    let [min, sec] = currentVal.split(':');
-
-    if (+sec - 1 < 0 && +min > 0) {
-        sec = 59;
-        min--;
-    } else if (+sec - 1 == 0 && +min == 0) {
-        intermission()
+const intermission = () => {
+    // ding.play()
+    isSession = !isSession;
+    let min;
+    if (isSession) {
+        min = document.getElementById('session-length').innerHTML;
     } else {
-        +sec--;
+        min = document.getElementById('break-length').innerHTML;
     }
     if (+min < 10) min = '0' + min.toString();
-    if (+sec < 10) sec = '0' + sec.toString();
+    document.getElementById('time-left').innerHTML = min + ':00';
+    myVar = setInterval(countdown, 1000);
 
+}
+
+const countdown = () => {
+    let currentValue = document.getElementById('time-left').innerHTML;
+    let min = +currentValue.split(':')[0];
+    let sec = +currentValue.split(':')[1];
+    console.log(min);
+    if (sec - 1 == 0 && min == 0) {
+        sec = sec - 1
+        clearInterval(myVar);
+        intermission();
+    } else if (sec - 1 < 0) {
+        min--;
+        sec = 59;
+    } else {
+        sec--;
+    }
+    min = min < 10 ? '0' + min.toString() : min;
+    sec = sec < 10 ? '0' + sec.toString() : sec;
     document.getElementById('time-left').innerHTML = `${min}:${sec}`;
 }
 
@@ -49,7 +66,11 @@ const sessionIncrement = () => {
     let currentVal = document.getElementById('session-length');
     if (+currentVal.innerHTML < 60) {
         currentVal.innerHTML = +currentVal.innerHTML + 1;
-        document.getElementById('time-left').innerHTML = `${currentVal.innerHTML}:00`;
+        if (currentVal.innerHTML < 10) {
+            document.getElementById('time-left').innerHTML = `0${currentVal.innerHTML}:00`;
+        } else {
+            document.getElementById('time-left').innerHTML = `${currentVal.innerHTML}:00`;
+        }
     }
 }
 
@@ -57,7 +78,11 @@ const sessionDecrement = () => {
     let currentVal = document.getElementById('session-length')
     if (+currentVal.innerHTML > 1) {
         currentVal.innerHTML = +currentVal.innerHTML - 1;
-        document.getElementById('time-left').innerHTML = `${currentVal.innerHTML}:00`;
+        if (currentVal.innerHTML < 10) {
+            document.getElementById('time-left').innerHTML = `0${currentVal.innerHTML}:00`;
+        } else {
+            document.getElementById('time-left').innerHTML = `${currentVal.innerHTML}:00`;
+        }
     }
 }
 
