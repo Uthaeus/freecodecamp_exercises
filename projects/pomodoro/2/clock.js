@@ -1,7 +1,7 @@
 let mainTimer = true;
 let playing = false;
 let myVar;
-let ding = new Audio("analog-watch-alarm_daniel-simion.wav");
+//let ding = new Audio("analog-watch-alarm_daniel-simion.wav");
 
 const startTimer = () => {
     myVar = setInterval(countDown, 1000);
@@ -14,7 +14,7 @@ const stopTimer = () => {
 const timeUpAlarm = () => {
     console.log('time up alarm');
     stopTimer();
-    ding.play();
+    //ding.play();
 }
 
 const countDown = () => {

@@ -1,6 +1,7 @@
 let isSession = true;
 let isRunning = false;
 let myVar;
+let ding = document.getElementById('beep');
 
 const startStop = () => {
     isRunning = !isRunning;
@@ -14,13 +15,15 @@ const startStop = () => {
 }
 
 const intermission = () => {
-    // ding.play()
+    ding.play()
     isSession = !isSession;
     let min;
     if (isSession) {
         min = document.getElementById('session-length').innerHTML;
+        document.getElementById('timer-label').innerHTML = 'Session';
     } else {
         min = document.getElementById('break-length').innerHTML;
+        document.getElementById('timer-label').innerHTML = 'Break';
     }
     if (+min < 10) min = '0' + min.toString();
 
@@ -87,6 +90,8 @@ const sessionDecrement = () => {
 
 const reSet = () => {
     clearInterval(myVar);
+    ding.pause();
+    ding.load();
     document.getElementById('start_stop').innerHTML = 'play';
     document.getElementById('break-length').innerHTML = 5;
     document.getElementById('session-length').innerHTML = 25;
