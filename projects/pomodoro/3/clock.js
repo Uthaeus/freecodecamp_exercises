@@ -23,8 +23,8 @@ const intermission = () => {
         min = document.getElementById('break-length').innerHTML;
     }
     if (+min < 10) min = '0' + min.toString();
-    document.getElementById('time-left').innerHTML = min + ':00';
-    myVar = setInterval(countdown, 1000);
+
+    document.getElementById('time-left').innerHTML = min.toString() + ':00';
 
 }
 
@@ -35,8 +35,6 @@ const countdown = () => {
     console.log(min);
     if (sec - 1 == 0 && min == 0) {
         sec = sec - 1
-        clearInterval(myVar);
-        intermission();
     } else if (sec - 1 < 0) {
         min--;
         sec = 59;
@@ -46,6 +44,7 @@ const countdown = () => {
     min = min < 10 ? '0' + min.toString() : min;
     sec = sec < 10 ? '0' + sec.toString() : sec;
     document.getElementById('time-left').innerHTML = `${min}:${sec}`;
+    if (+min == 0 && +sec == 0) intermission();
 }
 
 const breakIncrement = () => {
