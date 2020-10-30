@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pomodoro</title>
+        <link rel='stylesheet' type='text/css' href='clock.css' />
+        <script src='clock.js'></script>
+    </head>
+    <body>
+        <div id='header'>Pomodoro Clock</div>
+
+        <div id='main'>
+            <div id='break'>
+                <button id='break-increment' onclick='breakIncrement()'>+</button>
+                <div id='break-label'>Break Length</div>
+                <div id='break-length'>5</div>
+                <button id='break-decrement' onclick='breakDecrement()'>-</button>
+            </div>
+            <div id='display'>
+                <div id='timer-label'>Session</div>
+                <div id='time-left'>25:00</div>
+                <button id='start_stop' onclick='startStop()'>play</button>
+                <button id='reset' onclick='reSet()'>reset</button>
+            </div>
+            <div id='session'>
+                <button id='session-increment' onclick='sessionIncrement()'>+</button>
+                <div id='session-label'>Session Length</div>
+                <div id='session-length'>25</div>
+                <button id='session-decrement' onclick='sessionDecrement()'>-</button>
+            </div>
+        </div>
+    </body>
+</html>
