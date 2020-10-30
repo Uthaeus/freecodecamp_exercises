@@ -1,22 +1,22 @@
 
 let isRunning = false;
+let myVar;
 
 const startStop = () => {
     isRunning = !isRunning;
-    let x;
-
     if (isRunning) {
-        x = setInterval(countdown(), 1000);
+        myVar = setInterval(countdown, 1000);
     } else {
-        clearInterval(x);
+        clearInterval(myVar);
     }
 }
 
 const countdown = () => {
     let currentVal = document.getElementById('time-left').innerHTML;
     let [min, sec] = currentVal.split(':');
+    console.log(min);
 
-    
+
 }
 
 const breakIncrement = () => {
@@ -50,7 +50,7 @@ const sessionDecrement = () => {
 }
 
 const reSet = () => {
-    // clearInterval
+    clearInterval(myVar);
     document.getElementById('break-length').innerHTML = 5;
     document.getElementById('session-length').innerHTML = 25;
     document.getElementById('time-left').innerHTML = '25:00';
